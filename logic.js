@@ -32,7 +32,7 @@ var attribution = "Map data &copy; <a href=\"https://www.openstreetmap.org/\">Op
 
 var satelliteMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: attribution,
-  maxZoom: 10,
+  maxZoom: 18,
   id: "mapbox.satellite",
   accessToken: API_KEY
 });
@@ -44,10 +44,10 @@ var lightMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
   accessToken: API_KEY
 });
 
-var outdoorsMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+var streets = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: attribution,
   maxZoom: 18,
-  id: "mapbox.outdoors",
+  id: "mapbox.streets",
   accessToken: API_KEY
 });
 
@@ -55,7 +55,7 @@ var outdoorsMap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.
 var baseMaps = {
   "Satellite": satelliteMap,
   "Grayscale": lightMap,
-  "Outdoors": outdoorsMap
+  "Streets": streets
 };
 
 // Store API endpoint as queryUrl
